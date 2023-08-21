@@ -4,9 +4,9 @@ services:
   postgres:
     image: postgres:13-alpine
     environment:
-      POSTGRES_USER: staras
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: mypostgressdb
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     ports:
       - "5432:5432"
     volumes:
@@ -19,9 +19,9 @@ services:
     depends_on:
       - postgres
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/mypostgressdb
-      SPRING_DATASOURCE_USERNAME: staras
-      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
 
 volumes:
   postgres-data:
