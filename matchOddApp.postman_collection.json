@@ -1,0 +1,368 @@
+{
+	"info": {
+		"_postman_id": "9745e8e5-8a24-4481-af8f-b4008056b7a3",
+		"name": "matchOddApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17023226"
+	},
+	"item": [
+		{
+			"name": "match",
+			"item": [
+				{
+					"name": "create match",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"AEK vs PAO\",\r\n    \"match_date\": \"31/03/2021\",\r\n    \"match_time\": \"12:00\",\r\n    \"team_a\": \"AEK\",\r\n    \"team_b\": \"PAO\",\r\n    \"sport\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/matches",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"matches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get matches",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/matches",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"matches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get match",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/matches/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"matches",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete all matches",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/matches",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"matches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete match by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/matches/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"matches",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update match",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"AEK vs PAO\",\r\n    \"matchDate\": \"31/03/2021\",\r\n    \"matchTime\": \"12:00\",\r\n    \"teamA\": \"AEK\",\r\n    \"teamB\": \"OSFP\",\r\n    \"sport\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/matches/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"matches",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "odd",
+			"item": []
+		},
+		{
+			"name": "create match odd",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"match_id\": 1,\r\n    \"specifier\": \"2\",\r\n    \"odd\": 4.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/odds/matches/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"odds",
+						"matches",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get match odds by match id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"match_id\": 2,\r\n    \"specifier\": \"X\",\r\n    \"odd\": 1.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/odds/matches/10",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"odds",
+						"matches",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all odds",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"match_id\": 2,\r\n    \"specifier\": \"X\",\r\n    \"odd\": 1.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/odds",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"odds"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get odd by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"match_id\": 2,\r\n    \"specifier\": \"X\",\r\n    \"odd\": 1.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/odds/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"odds",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update odd by id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"match_id\": 5,\r\n    \"specifier\": \"X\",\r\n    \"odd\": 1.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/odds/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"odds",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete odds based on match id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"match_id\": 2,\r\n    \"specifier\": \"X\",\r\n    \"odd\": 1.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/matches/2/odds",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"matches",
+						"2",
+						"odds"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete odd by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"match_id\": 2,\r\n    \"specifier\": \"X\",\r\n    \"odd\": 1.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/odds/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"odds",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
